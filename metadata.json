@@ -1,0 +1,6 @@
+{
+  "name": "ReleafCanna",
+  "description": "A premium educational hub and domain lander for releafcanna.com, showcasing cannabis relief insights, cannabinoid science, terpene guides, and a secure direct buyer contact puzzle.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
