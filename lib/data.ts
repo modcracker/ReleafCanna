@@ -1,0 +1,448 @@
+// --- COMPLETE BIOCHEMICAL & MEDICAL CANNABIS DATASET ---
+// Exactly 15 Cannabinoids, 13 Terpenes, and 12 Conditions (Total 40 entries)
+
+export interface Cannabinoid {
+  id: string;
+  name: string;
+  fullName: string;
+  boilingPoint: string;
+  psychoactive: boolean;
+  benefits: string[];
+  description: string;
+  bestStrains: string[];
+  color: string;
+}
+
+export interface Terpene {
+  id: string;
+  name: string;
+  aroma: string;
+  boilingPoint: string;
+  effects: string[];
+  description: string;
+  bestStrains: string[];
+  color: string;
+  bgClass: string;
+}
+
+export interface Condition {
+  id: string;
+  name: string;
+  description: string;
+  cannabinoids: string[];
+  terpenes: string[];
+  scienceNote: string;
+}
+
+export const CANNABINOIDS: Cannabinoid[] = [
+  {
+    id: "THC",
+    name: "THC",
+    fullName: "Delta-9-Tetrahydrocannabinol",
+    boilingPoint: "315°F / 157°C",
+    psychoactive: true,
+    benefits: ["Severe Pain Relief", "Appetite Stimulation", "Nausea Reduction", "Muscle Spasm Control"],
+    description: "The primary psychoactive compound in cannabis. THC binds directly to CB1 receptors in the central nervous system, generating powerful analgesic and euphoric effects.",
+    bestStrains: ["OG Kush", "Sour Diesel", "Granddaddy Purple"],
+    color: "from-emerald-500 to-teal-600",
+  },
+  {
+    id: "CBD",
+    name: "CBD",
+    fullName: "Cannabidiol",
+    boilingPoint: "356°F / 180°C",
+    psychoactive: false,
+    benefits: ["Anxiety & Stress Relief", "Anti-inflammatory", "Seizure Reduction", "Chronic Pain Mitigation"],
+    description: "The second most prevalent cannabinoid. Non-psychoactive and well-known for suppressing anxiety, modulating THC-induced high, and reducing systematic inflammation.",
+    bestStrains: ["ACDC", "Charlotte's Web", "Harlequin"],
+    color: "from-cyan-500 to-blue-600",
+  },
+  {
+    id: "CBN",
+    name: "CBN",
+    fullName: "Cannabinol",
+    boilingPoint: "365°F / 185°C",
+    psychoactive: false,
+    benefits: ["Deep Sedation", "Insomnia Mitigation", "Bone Growth Stimulation", "Antibacterial"],
+    description: "Formed as THC ages and oxidizes. CBN is highly regarded as a non-psychoactive sleep-inducer, acting as a powerful sedative particularly when combined with terpenes.",
+    bestStrains: ["Aged Indica", "Northern Lights", "Blackberry Kush"],
+    color: "from-purple-600 to-indigo-700",
+  },
+  {
+    id: "CBG",
+    name: "CBG",
+    fullName: "Cannabigerol",
+    boilingPoint: "126°F / 52°C",
+    psychoactive: false,
+    benefits: ["Neuroprotection", "Glaucoma Support", "Inflammatory Bowel Relief", "Vasodilator"],
+    description: "Referred to as the 'stem cell' cannabinoid because other compounds start as CBGA. Highly neuroprotective, non-psychoactive, and effective at lowering intraocular pressure.",
+    bestStrains: ["Jack Herer", "White Widow", "CBG Blend"],
+    color: "from-amber-500 to-orange-600",
+  },
+  {
+    id: "THCV",
+    name: "THCV",
+    fullName: "Tetrahydrocannabivarin",
+    boilingPoint: "428°F / 220°C",
+    psychoactive: true,
+    benefits: ["Appetite Suppression", "Energy & Focus Boost", "Blood Sugar Regulation", "Panic Attack Reduction"],
+    description: "An exotic cannabinoid that suppresses appetite (unlike THC) and behaves as a functional stimulant. Excellent for alertness, focus, and glucose management.",
+    bestStrains: ["Durban Poison", "Doug's Varin", "Pineapple Express"],
+    color: "from-rose-500 to-pink-600",
+  },
+  {
+    id: "CBC",
+    name: "CBC",
+    fullName: "Cannabichromene",
+    boilingPoint: "428°F / 220°C",
+    psychoactive: false,
+    benefits: ["Brain Cell Viability (Neurogenesis)", "Mood Elevation", "Synergizes with THC", "Acne Inhibition"],
+    description: "CBC does not bind directly to CB1, but interacts with TRPV receptors. It is shown to promote neural stem cell viability and act as a powerful systematic antidepressant.",
+    bestStrains: ["Remedy", "3 Kings", "Cannatonic"],
+    color: "from-violet-500 to-fuchsia-600",
+  },
+  {
+    id: "CBDA",
+    name: "CBDA",
+    fullName: "Cannabidiolic Acid",
+    boilingPoint: "248°F / 120°C",
+    psychoactive: false,
+    benefits: ["Nausea Reduction", "Anti-inflammatory", "Anti-proliferative", "Anticonvulsant"],
+    description: "The acidic precursor to CBD. CBDA interacts primarily with 5-HT1A serotonin receptors, showing exceptional anti-nausea and selective anti-inflammatory properties.",
+    bestStrains: ["Remedy", "Lifter", "Special Sauce"],
+    color: "from-teal-400 to-emerald-500",
+  },
+  {
+    id: "THCA",
+    name: "THCA",
+    fullName: "Tetrahydrocannabinolic Acid",
+    boilingPoint: "220°F / 105°C",
+    psychoactive: false,
+    benefits: ["Neuroprotection", "Anti-emetic (Nausea)", "Anti-inflammatory", "Muscle Spasms"],
+    description: "The non-psychoactive raw form of THC found in live cannabis plants. It acts as an exceptionally powerful anti-inflammatory and neuroprotective compound without psychoactivity.",
+    bestStrains: ["Raw Sativa", "Fresh Juiced Leaf", "Lemon Kush"],
+    color: "from-lime-500 to-green-600",
+  },
+  {
+    id: "CBDV",
+    name: "CBDV",
+    fullName: "Cannabidivarin",
+    boilingPoint: "329°F / 165°C",
+    psychoactive: false,
+    benefits: ["Seizure Suppression", "Autism Spectrum Support", "Rett Syndrome Relief", "Nausea Reduction"],
+    description: "A homolog of CBD that has shown significant efficacy in epilepsy clinical trials and neurological symptom stabilization by targeting TRPV1 receptors.",
+    bestStrains: ["Royal CBDV", "Forbidden V", "Painkiller XL"],
+    color: "from-indigo-400 to-purple-500",
+  },
+  {
+    id: "Delta-8-THC",
+    name: "Delta-8-THC",
+    fullName: "Delta-8-Tetrahydrocannabinol",
+    boilingPoint: "347°F / 175°C",
+    psychoactive: true,
+    benefits: ["Mild Euphoria", "Appetite Boost", "Reduced Anxiety", "Nausea Control"],
+    description: "An isomer of Delta-9-THC that offers a significantly milder, less anxious psychotropic experience, making it popular for users seeking calm clarity.",
+    bestStrains: ["Delta-8 Distillate", "Skywalker OG", "Gelato"],
+    color: "from-orange-500 to-red-500",
+  },
+  {
+    id: "CBGA",
+    name: "CBGA",
+    fullName: "Cannabigerolic Acid",
+    boilingPoint: "212°F / 100°C",
+    psychoactive: false,
+    benefits: ["Colon Health Support", "Cardiovascular Protection", "Metabolic Balance", "Antibacterial"],
+    description: "The grand ancestor molecule of the cannabis plant from which all major cannabinoids are derived. Demonstrates positive support for colon inflammation.",
+    bestStrains: ["Stem Cell CBG", "Jack Frost", "White CBG"],
+    color: "from-yellow-500 to-amber-600",
+  },
+  {
+    id: "THCVA",
+    name: "THCVA",
+    fullName: "Tetrahydrocannabivarinic Acid",
+    boilingPoint: "230°F / 110°C",
+    psychoactive: false,
+    benefits: ["Anti-inflammatory", "Weight Management", "Immune Modulation", "Anti-microbial"],
+    description: "The raw precursor to THCV. Offers selective anti-inflammatory properties and shows promise in nutritional research and weight balance.",
+    bestStrains: ["Durban Poison Raw", "Doug's Varin Raw"],
+    color: "from-pink-500 to-rose-600",
+  },
+  {
+    id: "CBCA",
+    name: "CBCA",
+    fullName: "Cannabichromenic Acid",
+    boilingPoint: "221°F / 105°C",
+    psychoactive: false,
+    benefits: ["Antifungal", "Somatic Anti-inflammatory", "Cell Viability", "Antibacterial"],
+    description: "The raw precursor to CBC. Known for powerful antifungal properties and synergizing with other acidic cannabinoids to reduce overall body inflammation.",
+    bestStrains: ["Cannatonic Raw", "Harlequin Raw"],
+    color: "from-violet-400 to-fuchsia-500",
+  },
+  {
+    id: "Delta-10-THC",
+    name: "Delta-10-THC",
+    fullName: "Delta-10-Tetrahydrocannabinol",
+    boilingPoint: "338°F / 170°C",
+    psychoactive: true,
+    benefits: ["Sativa-Like Energy", "Creativity Boost", "Alertness", "Stress Relief"],
+    description: "A minor cannabinoid known for providing a very active, uplifting, Sativa-like cognitive buzz. Perfect for daylight productivity and focus.",
+    bestStrains: ["Delta-10 Sativa", "Pineapple Express D10", "Super Lemon"],
+    color: "from-cyan-400 to-emerald-500",
+  },
+  {
+    id: "CBL",
+    name: "CBL",
+    fullName: "Cannabicyclol",
+    boilingPoint: "428°F / 220°C",
+    psychoactive: false,
+    benefits: ["Muscle Relaxation", "Anti-inflammatory", "Mild Sedation", "Synergy (Entourage)"],
+    description: "A highly stable, minor cannabinoid formed when CBC degrades from UV exposure. It acts as a supporting therapeutic agent in the plant.",
+    bestStrains: ["Aged Indica Hash", "Chocolate Kush"],
+    color: "from-slate-500 to-zinc-600",
+  }
+];
+
+export const TERPENES: Terpene[] = [
+  {
+    id: "myrcene",
+    name: "Myrcene",
+    aroma: "Earthy, Musky, Cloves, Herbal",
+    boilingPoint: "334°F / 168°C",
+    effects: ["Deep Muscle Relaxation", "Sedative Vibe", "Enhanced THC Absorption", "Pain Blockade"],
+    description: "The most abundant terpene in commercial cannabis. It increases cell membrane permeability, facilitating faster cannabinoid uptake across the blood-brain barrier.",
+    bestStrains: ["Blue Dream", "Granddaddy Purple", "92 OG"],
+    color: "text-amber-400 border-amber-500/20",
+    bgClass: "bg-amber-950/20 hover:bg-amber-950/30",
+  },
+  {
+    id: "limonene",
+    name: "Limonene",
+    aroma: "Bright Citrus, Lemon, Orange zest",
+    boilingPoint: "349°F / 176°C",
+    effects: ["Uplifting Mood Boost", "Severe Stress Relief", "Antifungal", "Acid Reflux Relief"],
+    description: "A bright, therapeutic terpene found in citrus rinds. Limonene stimulates serotonin and dopamine pathways, acting as a highly effective anxiety relief agent.",
+    bestStrains: ["Super Lemon Haze", "Wedding Cake", "Clementine"],
+    color: "text-yellow-400 border-yellow-500/20",
+    bgClass: "bg-yellow-950/20 hover:bg-yellow-950/30",
+  },
+  {
+    id: "caryophyllene",
+    name: "Caryophyllene",
+    aroma: "Spicy Black Pepper, Wood, Cloves",
+    boilingPoint: "266°F / 130°C",
+    effects: ["Direct Cannabinoid Action", "Potent Anti-inflammatory", "Gut Protective", "Pain Mitigation"],
+    description: "The only terpene that acts directly as a cannabinoid by binding to CB2 receptors. Exceptional for treating autoimmune conditions, chronic pain, and stomach ulcers.",
+    bestStrains: ["Girl Scout Cookies", "Sour Diesel", "Sherbert"],
+    color: "text-red-400 border-red-500/20",
+    bgClass: "bg-red-950/20 hover:bg-red-950/30",
+  },
+  {
+    id: "pinene",
+    name: "Pinene",
+    aroma: "Fresh Pine, Forest needles, Wood",
+    boilingPoint: "311°F / 155°C",
+    effects: ["Sharp Alertness", "Memory Support (Acetylcholinesterase Inhibitor)", "Bronchodilator", "Anti-inflammatory"],
+    description: "Pinene counteracts the short-term memory impairment often associated with high THC strains. It opens respiratory passages and enhances mental focus.",
+    bestStrains: ["Jack Herer", "Blue Dream", "Strawberry Cough"],
+    color: "text-emerald-400 border-emerald-500/20",
+    bgClass: "bg-emerald-950/20 hover:bg-emerald-950/30",
+  },
+  {
+    id: "linalool",
+    name: "Linalool",
+    aroma: "Floral Lavender, Sweet Coriander",
+    boilingPoint: "388°F / 198°C",
+    effects: ["Deep Anxiety Reliever", "Insomnia Relief", "Anticonvulsant", "Immune System Support"],
+    description: "The same compound responsible for lavender's calming reputation. Linalool acts as a physical skeletal muscle relaxant and mitigates hyper-excitable brain activity.",
+    bestStrains: ["Lavender", "LA Confidential", "Do-Si-Dos"],
+    color: "text-purple-400 border-purple-500/20",
+    bgClass: "bg-purple-950/20 hover:bg-purple-950/30",
+  },
+  {
+    id: "terpinolene",
+    name: "Terpinolene",
+    aroma: "Floral, Herbal, Pine, Fresh Apples",
+    boilingPoint: "365°F / 185°C",
+    effects: ["Uplifting but Sedating", "Powerful Antioxidant", "Antifungal", "Central Nervous System Calmer"],
+    description: "A highly complex terpene with multi-aromatic characteristics. It offers uplifting intellectual focus while quietly reducing heart rate and central nervous system tension.",
+    bestStrains: ["Ghost Train Haze", "Durban Poison", "Super Lemon Haze"],
+    color: "text-cyan-400 border-cyan-500/20",
+    bgClass: "bg-cyan-950/20 hover:bg-cyan-950/30",
+  },
+  {
+    id: "humulene",
+    name: "Humulene",
+    aroma: "Woody, Earthy, Subtle Hops",
+    boilingPoint: "223°F / 106°C",
+    effects: ["Appetite Suppressant", "Anti-inflammatory", "Anti-tumor Potential", "Tissue Healing"],
+    description: "Found in hops and coriander, Humulene acts as a gentle appetite suppressant (contrasting THC) and provides localized tissue anti-inflammatory effects.",
+    bestStrains: ["Original Glue", "White Widow", "GSC"],
+    color: "text-orange-400 border-orange-500/20",
+    bgClass: "bg-orange-950/20 hover:bg-orange-950/30",
+  },
+  {
+    id: "ocimene",
+    name: "Ocimene",
+    aroma: "Sweet, Citrusy, Floral, Woody",
+    boilingPoint: "122°F / 50°C",
+    effects: ["Antiviral Properties", "Decongestant", "Antifungal Support", "Energetic Uplift"],
+    description: "A bright, defense terpene with broad-spectrum antiviral and anti-fungal properties. It helps clear respiratory systems and provides an energetic mood elevation.",
+    bestStrains: ["Strawberry Cough", "Space Queen", "Green Crack"],
+    color: "text-pink-400 border-pink-500/20",
+    bgClass: "bg-pink-950/20 hover:bg-pink-950/30",
+  },
+  {
+    id: "bisabolol",
+    name: "Bisabolol",
+    aroma: "Sweet Camomile, Soft Floral",
+    boilingPoint: "307°F / 153°C",
+    effects: ["Skin Cellular Healing", "Antimicrobial", "Analgesic Support", "Stress Reduction"],
+    description: "Also found in German Chamomile, Bisabolol has powerful anti-irritation, skin-repair, and soothing properties that aid healing.",
+    bestStrains: ["ACDC", "Headband", "Kona Gold"],
+    color: "text-teal-400 border-teal-500/20",
+    bgClass: "bg-teal-950/20 hover:bg-teal-950/30",
+  },
+  {
+    id: "guaiol",
+    name: "Guaiol",
+    aroma: "Woody, Rosy, Pine-Like",
+    boilingPoint: "201°F / 94°C",
+    effects: ["Microbial Regulation", "Cough Suppressant", "Anti-inflammatory", "Antioxidant"],
+    description: "An exotic terpene found in Guaiacum wood. Possesses potent antioxidant and antimicrobial properties, and historically used to soothe dry coughs.",
+    bestStrains: ["Blue Kush", "Plushberry", "Chernobyl"],
+    color: "text-lime-400 border-lime-500/20",
+    bgClass: "bg-lime-950/20 hover:bg-lime-950/30",
+  },
+  {
+    id: "geraniol",
+    name: "Geraniol",
+    aroma: "Sweet Rose, Peach, Lemon zest",
+    boilingPoint: "446°F / 230°C",
+    effects: ["Neuroprotective", "Deep Anti-inflammatory", "Muscle Relaxation", "Pain Suppression"],
+    description: "A delightful rose-scented terpene. Geraniol has shown impressive scientific potential in protecting brain cell health and relaxing tight skeletal muscle groups.",
+    bestStrains: ["Harlequin", "Lemon G", "Great White Shark"],
+    color: "text-rose-400 border-rose-500/20",
+    bgClass: "bg-rose-950/20 hover:bg-rose-950/30",
+  },
+  {
+    id: "camphene",
+    name: "Camphene",
+    aroma: "Damp Forest Floor, Pungent Pine, Fir",
+    boilingPoint: "318°F / 159°C",
+    effects: ["Cardiovascular Support", "Antioxidant Protection", "Respiratory Cleansing", "Skin Soothing"],
+    description: "A pungent, earthy terpene. Research suggests camphene is active in lowering systematic cholesterol and lipid counts in clinical models.",
+    bestStrains: ["OG Kush", "Mendocino Purps", "Bacio Gelato"],
+    color: "text-violet-400 border-violet-500/20",
+    bgClass: "bg-violet-950/20 hover:bg-violet-950/30",
+  },
+  {
+    id: "terpineol",
+    name: "Terpineol",
+    aroma: "Sweet Lilac, Apple Blossom, Citrus",
+    boilingPoint: "426°F / 219°C",
+    effects: ["Heavy Physical Sedation", "GABA-A Modulation", "Antibacterial", "Stress Numbing"],
+    description: "Highly responsible for the heavy 'couch-lock' sensation of deep indicas. Terpineol operates as a central nervous system depressant and soothing relaxant.",
+    bestStrains: ["White Runtz", "GSC", "Jack Herer"],
+    color: "text-cyan-400 border-cyan-500/20",
+    bgClass: "bg-cyan-950/20 hover:bg-cyan-950/30",
+  }
+];
+
+export const CONDITIONS: Condition[] = [
+  {
+    id: "pain",
+    name: "Chronic Pain & Neuropathy",
+    description: "Involves persistent inflammatory or neuropathic pain signals that require pain-receptor modulation.",
+    cannabinoids: ["THC", "CBD", "CBC", "CBG", "THCA"],
+    terpenes: ["Caryophyllene", "Myrcene", "Pinene", "Geraniol"],
+    scienceNote: "The combination of Caryophyllene binding to CB2 receptors and THC desensitizing noxious stimuli provides a complete, multi-pathway analgesic effect.",
+  },
+  {
+    id: "anxiety",
+    name: "Anxiety, PTSD & Stress",
+    description: "Hyper-excitation of amygdala and central nervous system overload calling for calming pathways.",
+    cannabinoids: ["CBD", "CBC", "CBG", "CBDV", "Delta-8-THC"],
+    terpenes: ["Linalool", "Limonene", "Bisabolol"],
+    scienceNote: "High doses of THC can induce anxiety, but CBD moderates the CB1 receptors. When paired with Linalool, this combination modulates GABA receptors for tranquility without mental fog.",
+  },
+  {
+    id: "insomnia",
+    name: "Insomnia & Sleep Disturbances",
+    description: "Difficulty entering deep sleep states, restless legs, or shallow delta-wave cycles.",
+    cannabinoids: ["CBN", "THC", "CBL"],
+    terpenes: ["Myrcene", "Linalool", "Terpineol"],
+    scienceNote: "As THC decomposes into CBN, it triggers powerful sedative pathways. Linalool and Myrcene act as synergistic physical muscle relaxants, facilitating rapid sleep onset.",
+  },
+  {
+    id: "inflammation",
+    name: "Arthritis & Systematic Inflammation",
+    description: "Inflammatory cytokines causing tissue swelling, joint stiffness, and autoimmune flare-ups.",
+    cannabinoids: ["CBD", "CBC", "CBG", "CBDA", "CBGA"],
+    terpenes: ["Caryophyllene", "Myrcene", "Camphene", "Humulene"],
+    scienceNote: "Caryophyllene directly reduces pro-inflammatory cytokines, while CBC inhibits acne and inflammatory pathways, delivering comprehensive non-psychoactive relief.",
+  },
+  {
+    id: "focus",
+    name: "ADHD, Brain Fog & Fatigue",
+    description: "Low dopamine/norepinephrine, poor sensory filtering, and mental lethargy.",
+    cannabinoids: ["THCV", "CBG", "Delta-10-THC", "THCVA"],
+    terpenes: ["Pinene", "Terpinolene", "Limonene", "Ocimene"],
+    scienceNote: "Pinene acts as a mild acetylcholinesterase inhibitor, preserving neurotransmitters responsible for focus and cognitive recall. THCV provides metabolic energy.",
+  },
+  {
+    id: "migraine",
+    name: "Migraines & Vascular Headaches",
+    description: "Severe vascular neurological pain, visual aura, and sensory overstimulation.",
+    cannabinoids: ["CBD", "THC", "CBDA", "THCA"],
+    terpenes: ["Myrcene", "Linalool", "Caryophyllene"],
+    scienceNote: "Acidic precursors CBDA and THCA are particularly potent at COX-2 inhibition, reducing cranial vascular swelling and desensitizing trigeminal nerves.",
+  },
+  {
+    id: "epilepsy",
+    name: "Epilepsy & Seizure Disorders",
+    description: "Abnormal hyper-synchronized electrical discharges in the cerebral cortex.",
+    cannabinoids: ["CBD", "CBDV", "CBDA"],
+    terpenes: ["Linalool", "Bisabolol"],
+    scienceNote: "CBD and CBDV act on calcium-modulating TRPV channels, slowing down abnormal firing networks and reducing systematic seizure intensity and frequency.",
+  },
+  {
+    id: "appetite",
+    name: "Cachexia & Appetite Stimulation",
+    description: "Severe weight loss, chemotherapy-induced nausea, and muscle wasting.",
+    cannabinoids: ["THC", "Delta-8-THC", "CBG"],
+    terpenes: ["Myrcene", "Limonene"],
+    scienceNote: "THC binds to CB1 receptors in the hypothalamus, triggering hunger hormones (ghrelin) and significantly restoring physical appetite.",
+  },
+  {
+    id: "ptsd",
+    name: "PTSD & Trauma Recovery",
+    description: "Intrusive traumatic recollections, hyper-vigilance, and nightmares.",
+    cannabinoids: ["CBD", "THC", "CBN"],
+    terpenes: ["Linalool", "Myrcene", "Bisabolol"],
+    scienceNote: "THC helps decrease the retrieval strength of fear memories and blocks nocturnal nightmare cycles, while CBD minimizes day-to-day emotional triggers.",
+  },
+  {
+    id: "muscle-spasms",
+    name: "Multiple Sclerosis & Spasticity",
+    description: "Involuntary muscle stiffness, painful cramps, and central nervous spasticity.",
+    cannabinoids: ["THC", "CBD", "CBC", "THCA"],
+    terpenes: ["Myrcene", "Linalool", "Geraniol"],
+    scienceNote: "The synergized activation of motor pathway CB1/CB2 receptors by THC and CBD lowers physical reflex triggers, calming continuous skeletal twitching.",
+  },
+  {
+    id: "fibromyalgia",
+    name: "Fibromyalgia & Musculoskeletal Pain",
+    description: "Amplified muscle pain, tenderness, systemic fatigue, and sleep distress.",
+    cannabinoids: ["CBD", "THC", "CBG", "CBC"],
+    terpenes: ["Caryophyllene", "Linalool", "Terpineol"],
+    scienceNote: "Broad-spectrum cannabinoid action stabilizes peripheral sensory nerves, while sedating terpenes alleviate the associated fatigue and sleep distress.",
+  },
+  {
+    id: "glaucoma",
+    name: "Glaucoma & Intraocular Pressure",
+    description: "Increased optic nerve fluid pressure leading to potential visual degradation.",
+    cannabinoids: ["CBG", "THC"],
+    terpenes: ["Pinene", "Limonene"],
+    scienceNote: "Both CBG and THC act as natural ocular vasodilators, facilitating healthy fluid drainage and significantly reducing intraocular pressure."
+  }
+];
