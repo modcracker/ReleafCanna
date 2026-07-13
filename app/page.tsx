@@ -923,7 +923,7 @@ export default function Home() {
                     className="p-3 bg-slate-900/30 border border-slate-900 hover:border-emerald-500/20 text-left rounded-xl transition-all flex flex-col justify-between"
                   >
                     <span className="text-[10px] text-emerald-400 font-semibold uppercase">{suggest.label}</span>
-                    <p className="text-slate-300 text-xs mt-1.5 leading-snug line-clamp-2">"{suggest.q}"</p>
+                    <p className="text-slate-300 text-xs mt-1.5 leading-snug line-clamp-2">&ldquo;{suggest.q}&rdquo;</p>
                   </button>
                 ))}
               </div>
