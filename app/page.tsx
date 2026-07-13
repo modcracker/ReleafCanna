@@ -37,6 +37,13 @@ import {
 // --- TYPES ---
 type Tab = "home" | "matcher" | "ai" | "cannabinoids" | "terpenes" | "conditions";
 
+interface HomeProps {
+  defaultTab?: Tab;
+  defaultTheme?: string;
+  params?: any;
+  searchParams?: any;
+}
+
 interface Message {
   role: "user" | "assistant";
   content: string;
@@ -52,8 +59,9 @@ interface RecommendedStrain {
   reason: string;
 }
 
-export default function Home() {
-  const [activeTab, setActiveTab] = useState<Tab>("home");
+export default function Home(props: any) {
+  const defaultTab = props?.defaultTab ?? "home";
+  const [activeTab, setActiveTab] = useState<Tab>(defaultTab);
 
   // --- MATCHER STATE ---
   const [matcherStep, setMatcherStep] = useState<number>(1);
