@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
+import FooterSitemap from "@/app/components/FooterSitemap";
 import {
   Leaf,
   Sliders,
@@ -311,9 +312,9 @@ export default function Home(props: any) {
   );
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-950 font-sans text-slate-100 overflow-x-hidden" id="releafcanna-root">
+    <div className="flex flex-col min-h-screen bg-slate-50 font-sans text-slate-900 overflow-x-hidden" id="releafcanna-root">
       {/* HEADER NAVBAR */}
-      <header className="border-b border-slate-900 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50 px-4 py-3 md:px-8 w-full" id="releafcanna-header">
+      <header className="border-b border-slate-200 bg-white/90 backdrop-blur-md sticky top-0 z-50 px-4 py-3 md:px-8 w-full" id="releafcanna-header">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 w-full">
           {/* CLICKABLE LOGO */}
           <button 
@@ -332,25 +333,25 @@ export default function Home(props: any) {
             aria-label="ReleafCanna Home"
           >
             <div className="bg-emerald-500/10 p-2 rounded-xl border border-emerald-500/30 group-hover:border-emerald-500/50 group-hover:bg-emerald-500/15 transition-all">
-              <Leaf className="w-5.5 h-5.5 text-emerald-400" />
+              <Leaf className="w-5.5 h-5.5 text-emerald-600" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-display font-bold text-lg tracking-tight text-white">ReleafCanna</span>
-                <span className="text-[9px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/20 font-sans font-medium">Medical AI</span>
+                <span className="font-display font-bold text-lg tracking-tight text-slate-900">ReleafCanna</span>
+                <span className="text-[9px] bg-emerald-500/10 text-emerald-600 px-2 py-0.5 rounded-full border border-emerald-500/20 font-sans font-medium">Medical AI</span>
               </div>
-              <p className="text-slate-500 text-[10px] sm:text-xs">Cannabis Patient Guidance & Science Matching</p>
+              <p className="text-slate-600 text-[10px] sm:text-xs">Cannabis Patient Guidance & Science Matching</p>
             </div>
           </button>
 
           {/* RESPONSIVE ALWAYS-VISIBLE NAV SWITCHER */}
-          <nav className="flex items-center gap-1 bg-slate-900/60 p-1 rounded-xl border border-slate-800/80 w-full lg:w-auto overflow-x-auto scrollbar-none justify-start sm:justify-center" id="main-nav">
+          <nav className="flex items-center gap-1 bg-slate-200/50 p-1 rounded-xl border border-slate-300 w-full lg:w-auto overflow-x-auto scrollbar-none justify-start sm:justify-center" id="main-nav">
             <button
               onClick={() => { setActiveTab("home"); setSearchQuery(""); }}
               className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-xs md:text-sm font-medium transition-all cursor-pointer whitespace-nowrap flex-shrink-0 ${
                 activeTab === "home"
                   ? "bg-emerald-500 text-slate-950 shadow-md font-semibold"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800"
+                  : "text-slate-700 hover:text-slate-900 hover:bg-slate-300/40"
               }`}
               id="nav-home"
             >
@@ -363,7 +364,7 @@ export default function Home(props: any) {
               className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-xs md:text-sm font-medium transition-all cursor-pointer whitespace-nowrap flex-shrink-0 ${
                 activeTab === "matcher"
                   ? "bg-emerald-500 text-slate-950 shadow-md font-semibold"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800"
+                  : "text-slate-700 hover:text-slate-900 hover:bg-slate-300/40"
               }`}
               id="nav-matcher"
             >
@@ -377,7 +378,7 @@ export default function Home(props: any) {
               className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-xs md:text-sm font-medium transition-all cursor-pointer whitespace-nowrap flex-shrink-0 ${
                 activeTab === "ai"
                   ? "bg-emerald-500 text-slate-950 shadow-md font-semibold"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800"
+                  : "text-slate-700 hover:text-slate-900 hover:bg-slate-300/40"
               }`}
               id="nav-ai"
             >
@@ -391,7 +392,7 @@ export default function Home(props: any) {
               className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-xs md:text-sm font-medium transition-all cursor-pointer whitespace-nowrap flex-shrink-0 ${
                 activeTab === "cannabinoids"
                   ? "bg-emerald-500 text-slate-950 shadow-md font-semibold"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800"
+                  : "text-slate-700 hover:text-slate-900 hover:bg-slate-300/40"
               }`}
               id="nav-cannabinoids"
             >
@@ -404,7 +405,7 @@ export default function Home(props: any) {
               className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-xs md:text-sm font-medium transition-all cursor-pointer whitespace-nowrap flex-shrink-0 ${
                 activeTab === "terpenes"
                   ? "bg-emerald-500 text-slate-950 shadow-md font-semibold"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800"
+                  : "text-slate-700 hover:text-slate-900 hover:bg-slate-300/40"
               }`}
               id="nav-terpenes"
             >
@@ -417,7 +418,7 @@ export default function Home(props: any) {
               className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-xs md:text-sm font-medium transition-all cursor-pointer whitespace-nowrap flex-shrink-0 ${
                 activeTab === "conditions"
                   ? "bg-emerald-500 text-slate-950 shadow-md font-semibold"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800"
+                  : "text-slate-700 hover:text-slate-900 hover:bg-slate-300/40"
               }`}
               id="nav-conditions"
             >
@@ -445,13 +446,13 @@ export default function Home(props: any) {
             >
               {/* BRAND HERO BANNER */}
               <div className="text-center max-w-3xl mx-auto space-y-4 py-4" id="home-portal-hero">
-                <span className="text-xs font-semibold text-emerald-400 tracking-wider uppercase bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20">
+                <span className="text-xs font-semibold text-emerald-600 tracking-wider uppercase bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20">
                   Empirical Science & Guidance System
                 </span>
-                <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight">
-                  Demystifying <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Medicinal Cannabis</span> Through Chemistry
+                <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-slate-900 tracking-tight leading-tight">
+                  Demystifying <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-cyan-600">Medicinal Cannabis</span> Through Chemistry
                 </h2>
-                <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                   Welcome to ReleafCanna. Browse peer-reviewed cannabinoid boiling points, explore aromatic terpene receptors, consult our server-side AI medical agent, or calculate custom cultivar recommendations based on your symptoms.
                 </p>
               </div>
@@ -462,26 +463,26 @@ export default function Home(props: any) {
                 {/* 1. STRAIN MATCHER CARD */}
                 <div 
                   onClick={() => { setActiveTab("matcher"); setMatcherStep(1); }}
-                  className="group bg-slate-900/30 border border-slate-900 hover:border-emerald-500/20 hover:bg-slate-900/50 transition-all rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6"
+                  className="group bg-white border border-slate-200 hover:border-emerald-500/20 hover:bg-slate-50 transition-all rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6 shadow-sm"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 group-hover:scale-105 transition-all">
+                      <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 group-hover:scale-105 transition-all">
                         <Sliders className="w-5.5 h-5.5" />
                       </div>
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-400 bg-emerald-500/5 px-2.5 py-1 rounded-md border border-emerald-500/10">Interactive Tool</span>
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-100">Interactive Tool</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors flex items-center gap-1.5">
                         Therapeutic Strain Matcher
                         <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-4px] group-hover:translate-x-0" />
                       </h3>
-                      <p className="text-slate-400 text-xs mt-2 leading-relaxed">
+                      <p className="text-slate-600 text-xs mt-2 leading-relaxed">
                         Answer three brief, tailored physiological questions about your symptom targets, preferred vaporization or ingestion route, and sensitivity. Instantly calculate compatible cannabinoid structures and matching cultivars.
                       </p>
                     </div>
                   </div>
-                  <div className="pt-4 border-t border-slate-950 flex items-center justify-between text-xs font-semibold text-emerald-400 group-hover:text-emerald-300">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-emerald-600 group-hover:text-emerald-700">
                     <span>Calculate Custom Strains</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -490,26 +491,26 @@ export default function Home(props: any) {
                 {/* 2. AI CONSULTANT CARD */}
                 <div 
                   onClick={() => { setActiveTab("ai"); }}
-                  className="group bg-slate-900/30 border border-slate-900 hover:border-emerald-500/20 hover:bg-slate-900/50 transition-all rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6"
+                  className="group bg-white border border-slate-200 hover:border-emerald-500/20 hover:bg-slate-50 transition-all rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6 shadow-sm"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 group-hover:scale-105 transition-all">
+                      <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 group-hover:scale-105 transition-all">
                         <Brain className="w-5.5 h-5.5" />
                       </div>
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-cyan-400 bg-cyan-500/5 px-2.5 py-1 rounded-md border border-cyan-500/10">AI Consultation</span>
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-cyan-700 bg-cyan-50 px-2.5 py-1 rounded-md border border-cyan-100">AI Consultation</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors flex items-center gap-1.5">
                         AI Medical Advisor
                         <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-4px] group-hover:translate-x-0" />
                       </h3>
-                      <p className="text-slate-400 text-xs mt-2 leading-relaxed">
+                      <p className="text-slate-600 text-xs mt-2 leading-relaxed">
                         Connect with our server-side medical expert. Consult regarding deep pharmacological queries about active chemical pathways, systematic sleep induction, cannabinoid bioavailability, and precise dosage formulas.
                       </p>
                     </div>
                   </div>
-                  <div className="pt-4 border-t border-slate-950 flex items-center justify-between text-xs font-semibold text-emerald-400 group-hover:text-emerald-300">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-emerald-600 group-hover:text-emerald-700">
                     <span>Ask the AI Consultant</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -518,26 +519,26 @@ export default function Home(props: any) {
                 {/* 3. CANNABINOIDS DIRECTORY */}
                 <div 
                   onClick={() => { setActiveTab("cannabinoids"); }}
-                  className="group bg-slate-900/30 border border-slate-900 hover:border-emerald-500/20 hover:bg-slate-900/50 transition-all rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6"
+                  className="group bg-white border border-slate-200 hover:border-emerald-500/20 hover:bg-slate-50 transition-all rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6 shadow-sm"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 group-hover:scale-105 transition-all">
+                      <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 group-hover:scale-105 transition-all">
                         <HeartPulse className="w-5.5 h-5.5" />
                       </div>
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700/50">Scientific Index</span>
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">Scientific Index</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors flex items-center gap-1.5">
                         Phyto-Cannabinoid Science
                         <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-4px] group-hover:translate-x-0" />
                       </h3>
-                      <p className="text-slate-400 text-xs mt-2 leading-relaxed">
+                      <p className="text-slate-600 text-xs mt-2 leading-relaxed">
                         Explore complete profiles of key cannabinoids including THC, CBD, CBG, CBN, and CBC. Learn about decarboxylation boiling points, therapeutic targets, and corresponding dominant cultivars.
                       </p>
                     </div>
                   </div>
-                  <div className="pt-4 border-t border-slate-950 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-white">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-600 group-hover:text-slate-950">
                     <span>Explore Cannabinoids Directory</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -546,26 +547,26 @@ export default function Home(props: any) {
                 {/* 4. TERPENES ENCYCLOPEDIA */}
                 <div 
                   onClick={() => { setActiveTab("terpenes"); }}
-                  className="group bg-slate-900/30 border border-slate-900 hover:border-emerald-500/20 hover:bg-slate-900/50 transition-all rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6"
+                  className="group bg-white border border-slate-200 hover:border-emerald-500/20 hover:bg-slate-50 transition-all rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6 shadow-sm"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 group-hover:scale-105 transition-all">
+                      <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 group-hover:scale-105 transition-all">
                         <Flame className="w-5.5 h-5.5" />
                       </div>
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700/50">Scientific Index</span>
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">Scientific Index</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors flex items-center gap-1.5">
                         Terpene Hydrocarbons Guide
                         <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-4px] group-hover:translate-x-0" />
                       </h3>
-                      <p className="text-slate-400 text-xs mt-2 leading-relaxed">
+                      <p className="text-slate-600 text-xs mt-2 leading-relaxed">
                         Dive into the aromatic pharmacology of primary cannabis terpenes: Myrcene, Limonene, Caryophyllene, and Linalool. Study boiling points, sensory notes, and entourage synergy.
                       </p>
                     </div>
                   </div>
-                  <div className="pt-4 border-t border-slate-950 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-white">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-600 group-hover:text-slate-950">
                     <span>Browse Terpenes Encyclopedia</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -574,26 +575,26 @@ export default function Home(props: any) {
                 {/* 5. SYMPTOM GUIDE */}
                 <div 
                   onClick={() => { setActiveTab("conditions"); }}
-                  className="group bg-slate-900/30 border border-slate-900 hover:border-emerald-500/20 hover:bg-slate-900/50 transition-all rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6 md:col-span-2 lg:col-span-1"
+                  className="group bg-white border border-slate-200 hover:border-emerald-500/20 hover:bg-slate-50 transition-all rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6 md:col-span-2 lg:col-span-1 shadow-sm"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 group-hover:scale-105 transition-all">
+                      <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 group-hover:scale-105 transition-all">
                         <BookOpen className="w-5.5 h-5.5" />
                       </div>
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700/50">Clinical Mapper</span>
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">Clinical Mapper</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors flex items-center gap-1.5">
                         Clinical Symptom Guide
                         <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-4px] group-hover:translate-x-0" />
                       </h3>
-                      <p className="text-slate-400 text-xs mt-2 leading-relaxed">
+                      <p className="text-slate-600 text-xs mt-2 leading-relaxed">
                         A clinical index translating common symptoms (neuropathy, insomnia, anxiety, ADHD) into targeted active cannabinoid ratios, vaporization ranges, and entourage recipes.
                       </p>
                     </div>
                   </div>
-                  <div className="pt-4 border-t border-slate-950 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-white">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-600 group-hover:text-slate-950">
                     <span>View Symptom Science Index</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -602,21 +603,21 @@ export default function Home(props: any) {
               </div>
 
               {/* QUICK STATS & BENEFITS */}
-              <div className="border border-slate-900 bg-slate-950/40 rounded-2xl p-6 grid grid-cols-1 sm:grid-cols-3 gap-6" id="home-clinical-highlights">
+              <div className="border border-slate-200 bg-white rounded-2xl p-6 grid grid-cols-1 sm:grid-cols-3 gap-6 shadow-sm" id="home-clinical-highlights">
                 <div className="space-y-1">
                   <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest font-mono">Active Database</span>
-                  <p className="text-base font-bold text-white">Full Phytocannabinoid Profile</p>
-                  <p className="text-xs text-slate-400">Complete boiling points, therapeutic targets, and molecular functions cataloged.</p>
+                  <p className="text-base font-bold text-slate-900">Full Phytocannabinoid Profile</p>
+                  <p className="text-xs text-slate-600">Complete boiling points, therapeutic targets, and molecular functions cataloged.</p>
                 </div>
-                <div className="space-y-1 border-t sm:border-t-0 sm:border-l border-slate-900/80 pt-4 sm:pt-0 sm:pl-6">
+                <div className="space-y-1 border-t sm:border-t-0 sm:border-l border-slate-200 pt-4 sm:pt-0 sm:pl-6">
                   <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest font-mono">Synergy Focus</span>
-                  <p className="text-base font-bold text-white">The Entourage Effect</p>
-                  <p className="text-xs text-slate-400">Deep integration mapping active terpenes and phytocannabinoids to clinical receptors.</p>
+                  <p className="text-base font-bold text-slate-900">The Entourage Effect</p>
+                  <p className="text-xs text-slate-600">Deep integration mapping active terpenes and phytocannabinoids to clinical receptors.</p>
                 </div>
-                <div className="space-y-1 border-t sm:border-t-0 sm:border-l border-slate-900/80 pt-4 sm:pt-0 sm:pl-6">
+                <div className="space-y-1 border-t sm:border-t-0 sm:border-l border-slate-200 pt-4 sm:pt-0 sm:pl-6">
                   <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest font-mono">AI Consultant</span>
-                  <p className="text-base font-bold text-white">Live Gemini Chat Advisor</p>
-                  <p className="text-xs text-slate-400">Ask questions regarding medical literature, dosage titration, and localized bioavailability.</p>
+                  <p className="text-base font-bold text-slate-900">Live Gemini Chat Advisor</p>
+                  <p className="text-xs text-slate-600">Ask questions regarding medical literature, dosage titration, and localized bioavailability.</p>
                 </div>
               </div>
             </motion.section>
@@ -636,9 +637,9 @@ export default function Home(props: any) {
               {/* INTRO HERO */}
               {!matchResult && (
                 <div className="text-center max-w-2xl mx-auto space-y-3 py-6" id="matcher-hero">
-                  <span className="text-xs font-semibold text-emerald-400 tracking-wider uppercase bg-emerald-500/5 px-3 py-1 rounded-full border border-emerald-500/10">Interactive Selector</span>
-                  <h2 className="font-display font-bold text-3xl md:text-4xl text-white tracking-tight">Discover Your Optimal Chemical Match</h2>
-                  <p className="text-slate-400 text-sm md:text-base">
+                  <span className="text-xs font-semibold text-emerald-600 tracking-wider uppercase bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Interactive Selector</span>
+                  <h2 className="font-display font-bold text-3xl md:text-4xl text-slate-900 tracking-tight">Discover Your Optimal Chemical Match</h2>
+                  <p className="text-slate-600 text-sm md:text-base">
                     Use our symptom-to-chemistry calculator. Answer 3 quick therapeutic questions to locate custom cannabinoids, terpenes, and strains that align with your requirements.
                   </p>
                 </div>
@@ -646,16 +647,16 @@ export default function Home(props: any) {
 
               {/* MATCHER WIZARD FLOW */}
               {!matchResult ? (
-                <div className="bg-slate-900/40 border border-slate-900 rounded-2xl max-w-2xl mx-auto overflow-hidden shadow-xl" id="matcher-wizard">
+                <div className="bg-white border border-slate-200 rounded-2xl max-w-2xl mx-auto overflow-hidden shadow-sm" id="matcher-wizard">
                   {/* PROGRESS BAR */}
-                  <div className="bg-slate-900 p-4 border-b border-slate-800 flex items-center justify-between" id="progress-bar">
-                    <span className="text-xs text-slate-500">Therapeutic Algorithm Progress</span>
+                  <div className="bg-slate-100 p-4 border-b border-slate-200 flex items-center justify-between" id="progress-bar">
+                    <span className="text-xs text-slate-600">Therapeutic Algorithm Progress</span>
                     <div className="flex gap-1.5">
                       {[1, 2, 3].map((step) => (
                         <div
                           key={step}
                           className={`w-12 h-1.5 rounded-full transition-all duration-300 ${
-                            step <= matcherStep ? "bg-emerald-500" : "bg-slate-800"
+                            step <= matcherStep ? "bg-emerald-500" : "bg-slate-200"
                           }`}
                         />
                       ))}
@@ -667,11 +668,11 @@ export default function Home(props: any) {
                     {matcherStep === 1 && (
                       <div className="space-y-6" id="matcher-step-1">
                         <div>
-                          <h3 className="text-lg font-display font-medium text-white flex items-center gap-2">
-                            <span className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xs font-bold">1</span>
+                          <h3 className="text-lg font-display font-medium text-slate-900 flex items-center gap-2">
+                            <span className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xs font-bold">1</span>
                             What is your primary medical or therapeutic goal?
                           </h3>
-                          <p className="text-slate-400 text-xs mt-1">Select the symptom or effect you want to address directly.</p>
+                          <p className="text-slate-600 text-xs mt-1">Select the symptom or effect you want to address directly.</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3" id="effect-options">
@@ -687,15 +688,15 @@ export default function Home(props: any) {
                               onClick={() => setSelectedEffect(effect.id)}
                               className={`p-4 rounded-xl border text-left transition-all ${
                                 selectedEffect === effect.id
-                                  ? "bg-emerald-950/20 border-emerald-500 text-white"
-                                  : "bg-slate-900/30 border-slate-900 text-slate-300 " + effect.color
+                                  ? "bg-emerald-50 border-emerald-500 text-slate-900"
+                                  : "bg-white border-slate-200 text-slate-800 " + effect.color
                               }`}
                             >
                               <div className="font-semibold text-sm flex items-center justify-between">
                                 {effect.label}
-                                {selectedEffect === effect.id && <Check className="w-4 h-4 text-emerald-400" />}
+                                {selectedEffect === effect.id && <Check className="w-4 h-4 text-emerald-600" />}
                               </div>
-                              <p className="text-slate-500 text-xs mt-1">{effect.desc}</p>
+                              <p className="text-slate-600 text-xs mt-1">{effect.desc}</p>
                             </button>
                           ))}
                         </div>
@@ -706,11 +707,11 @@ export default function Home(props: any) {
                     {matcherStep === 2 && (
                       <div className="space-y-6" id="matcher-step-2">
                         <div>
-                          <h3 className="text-lg font-display font-medium text-white flex items-center gap-2">
-                            <span className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xs font-bold">2</span>
+                          <h3 className="text-lg font-display font-medium text-slate-900 flex items-center gap-2">
+                            <span className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xs font-bold">2</span>
                             What is your preferred consumption methodology?
                           </h3>
-                          <p className="text-slate-400 text-xs mt-1">Controls the onset speed, biochemical bioavailability, and physical duration.</p>
+                          <p className="text-slate-600 text-xs mt-1">Controls the onset speed, biochemical bioavailability, and physical duration.</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3" id="consumption-options">
@@ -725,15 +726,15 @@ export default function Home(props: any) {
                               onClick={() => setSelectedConsumption(method.id)}
                               className={`p-4 rounded-xl border text-left transition-all ${
                                 selectedConsumption === method.id
-                                  ? "bg-emerald-950/20 border-emerald-500 text-white"
-                                  : "bg-slate-900/30 border-slate-900 text-slate-300 hover:border-slate-800"
+                                  ? "bg-emerald-50 border-emerald-500 text-slate-900"
+                                  : "bg-white border-slate-200 text-slate-800 hover:border-slate-300"
                               }`}
                             >
                               <div className="font-semibold text-sm flex items-center justify-between">
                                 {method.label}
-                                {selectedConsumption === method.id && <Check className="w-4 h-4 text-emerald-400" />}
+                                {selectedConsumption === method.id && <Check className="w-4 h-4 text-emerald-600" />}
                               </div>
-                              <p className="text-slate-500 text-xs mt-1">{method.desc}</p>
+                              <p className="text-slate-600 text-xs mt-1">{method.desc}</p>
                             </button>
                           ))}
                         </div>
@@ -744,11 +745,11 @@ export default function Home(props: any) {
                     {matcherStep === 3 && (
                       <div className="space-y-6" id="matcher-step-3">
                         <div>
-                          <h3 className="text-lg font-display font-medium text-white flex items-center gap-2">
-                            <span className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xs font-bold">3</span>
+                          <h3 className="text-lg font-display font-medium text-slate-900 flex items-center gap-2">
+                            <span className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xs font-bold">3</span>
                             What is your current cannabis tolerance / experience?
                           </h3>
-                          <p className="text-slate-400 text-xs mt-1">This allows the calculator to customize THC limits and recommend CBD buffers.</p>
+                          <p className="text-slate-600 text-xs mt-1">This allows the calculator to customize THC limits and recommend CBD buffers.</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-3" id="tolerance-options">
@@ -762,16 +763,16 @@ export default function Home(props: any) {
                               onClick={() => setSelectedTolerance(tol.id)}
                               className={`p-4 rounded-xl border text-left transition-all flex flex-col justify-between ${
                                 selectedTolerance === tol.id
-                                  ? "bg-emerald-950/20 border-emerald-500 text-white"
-                                  : "bg-slate-900/30 border-slate-900 text-slate-300 hover:border-slate-800"
+                                  ? "bg-emerald-50 border-emerald-500 text-slate-900"
+                                  : "bg-white border-slate-200 text-slate-800 hover:border-slate-300"
                               }`}
                             >
                               <div>
                                 <div className="font-semibold text-sm flex items-center justify-between">
                                   {tol.label}
-                                  {selectedTolerance === tol.id && <Check className="w-4 h-4 text-emerald-400" />}
+                                  {selectedTolerance === tol.id && <Check className="w-4 h-4 text-emerald-600" />}
                                 </div>
-                                <p className="text-slate-500 text-xs mt-2">{tol.desc}</p>
+                                <p className="text-slate-600 text-xs mt-2">{tol.desc}</p>
                               </div>
                             </button>
                           ))}
@@ -781,11 +782,11 @@ export default function Home(props: any) {
                   </div>
 
                   {/* NAVIGATION CONTROL FOOTER */}
-                  <div className="bg-slate-900 p-4 border-t border-slate-800 flex items-center justify-between" id="matcher-nav-footer">
+                  <div className="bg-slate-100 p-4 border-t border-slate-200 flex items-center justify-between" id="matcher-nav-footer">
                     {matcherStep > 1 ? (
                       <button
                         onClick={handlePrevStep}
-                        className="flex items-center gap-2 text-slate-400 hover:text-white text-sm"
+                        className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm font-medium transition-all"
                       >
                         <RotateCcw className="w-4 h-4" />
                         Previous Step
@@ -801,7 +802,7 @@ export default function Home(props: any) {
                           (matcherStep === 1 && !selectedEffect) ||
                           (matcherStep === 2 && !selectedConsumption)
                         }
-                        className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-5 py-2 rounded-lg text-sm flex items-center gap-1.5 transition-all disabled:opacity-50 disabled:pointer-events-none"
+                        className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-5 py-2 rounded-lg text-sm flex items-center gap-1.5 transition-all disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                       >
                         Next
                         <ArrowRight className="w-4 h-4" />
@@ -810,7 +811,7 @@ export default function Home(props: any) {
                       <button
                         onClick={runMatcherAlgorithm}
                         disabled={!selectedTolerance || isMatching}
-                        className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-2.5 rounded-lg text-sm flex items-center gap-2 transition-all disabled:opacity-50 disabled:pointer-events-none"
+                        className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-2.5 rounded-lg text-sm flex items-center gap-2 transition-all disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                       >
                         <Sparkles className="w-4 h-4" />
                         {isMatching ? "Calculating Chemistry..." : "Calculate My Strains"}
@@ -822,47 +823,47 @@ export default function Home(props: any) {
                 /* MATCH RESULT VIEW */
                 <div className="max-w-4xl mx-auto space-y-6" id="match-results-view">
                   <div className="text-center space-y-2">
-                    <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Calculated Matches Loaded</span>
-                    <h2 className="text-3xl font-display font-bold text-white tracking-tight">Your Custom Therapeutic Chemistry matches</h2>
-                    <p className="text-slate-500 text-xs">Based on targeted relief for: {selectedEffect.toUpperCase()} • Consumption: {selectedConsumption.toUpperCase()} • Sensitivity: {selectedTolerance.toUpperCase()}</p>
+                    <span className="text-xs font-semibold text-emerald-600 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Calculated Matches Loaded</span>
+                    <h2 className="text-3xl font-display font-bold text-slate-900 tracking-tight">Your Custom Therapeutic Chemistry matches</h2>
+                    <p className="text-slate-600 text-xs">Based on targeted relief for: {selectedEffect.toUpperCase()} • Consumption: {selectedConsumption.toUpperCase()} • Sensitivity: {selectedTolerance.toUpperCase()}</p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6" id="strain-result-cards">
                     {matchResult.map((strain, index) => (
                       <div
                         key={index}
-                        className="bg-slate-900/40 border border-slate-900 rounded-2xl p-6 hover:border-emerald-500/20 transition-all flex flex-col justify-between"
+                        className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-emerald-500/20 transition-all flex flex-col justify-between shadow-sm"
                       >
                         <div className="space-y-4">
                           <div className="flex items-center justify-between">
-                            <span className="text-xs uppercase tracking-widest font-semibold px-2 py-1 rounded bg-slate-800 text-emerald-400 border border-slate-800">
+                            <span className="text-xs uppercase tracking-widest font-semibold px-2 py-1 rounded bg-slate-100 text-emerald-700 border border-slate-200">
                               {strain.type}
                             </span>
-                            <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                            <div className="flex items-center gap-1.5 text-xs text-slate-600">
                               <Award className="w-4 h-4 text-amber-500" />
                               Match Rank #{index + 1}
                             </div>
                           </div>
 
                           <div>
-                            <h3 className="text-xl font-display font-bold text-white tracking-tight">
+                            <h3 className="text-xl font-display font-bold text-slate-900 tracking-tight">
                               {strain.name}
                             </h3>
-                            <div className="flex gap-4 text-xs mt-2 text-slate-400 bg-slate-950/40 p-2 rounded-lg border border-slate-900">
-                              <div>THC: <span className="text-white font-medium">{strain.thc}</span></div>
-                              <div>CBD: <span className="text-white font-medium">{strain.cbd}</span></div>
+                            <div className="flex gap-4 text-xs mt-2 text-slate-600 bg-slate-100 p-2 rounded-lg border border-slate-200">
+                              <div>THC: <span className="text-slate-900 font-medium">{strain.thc}</span></div>
+                              <div>CBD: <span className="text-slate-900 font-medium">{strain.cbd}</span></div>
                             </div>
                           </div>
 
-                          <p className="text-slate-400 text-xs leading-relaxed">
+                          <p className="text-slate-600 text-xs leading-relaxed">
                             {strain.reason}
                           </p>
 
                           <div>
-                            <h4 className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-2">Expressed Terpenes:</h4>
+                            <h4 className="text-xs text-slate-600 font-semibold uppercase tracking-wider mb-2">Expressed Terpenes:</h4>
                             <div className="flex flex-wrap gap-1.5">
                               {strain.primaryTerpenes.map((terp, i) => (
-                                <span key={i} className="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-800">
+                                <span key={i} className="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
                                   {terp}
                                 </span>
                               ))}
@@ -870,10 +871,10 @@ export default function Home(props: any) {
                           </div>
                         </div>
 
-                        <div className="pt-6 mt-6 border-t border-slate-900/60 flex items-center justify-between">
+                        <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
                           <button
                             onClick={() => askAiAboutMatch(strain.name)}
-                            className="text-xs text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-medium transition-all"
+                            className="text-xs text-emerald-600 hover:text-emerald-700 flex items-center gap-1 font-medium transition-all"
                           >
                             <Brain className="w-3.5 h-3.5" />
                             Analyze with AI Advisor
@@ -887,7 +888,7 @@ export default function Home(props: any) {
                   <div className="text-center pt-4">
                     <button
                       onClick={resetMatcher}
-                      className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-slate-300 px-6 py-2.5 rounded-xl text-sm transition-all"
+                      className="inline-flex items-center gap-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 px-6 py-2.5 rounded-xl text-sm transition-all shadow-sm cursor-pointer"
                     >
                       <RotateCcw className="w-4 h-4" />
                       Reset Strain Calculator
@@ -911,9 +912,9 @@ export default function Home(props: any) {
             >
               {/* INTRO HERO */}
               <div className="text-center max-w-2xl mx-auto space-y-2 py-2">
-                <span className="text-xs font-semibold text-emerald-400 tracking-wider uppercase bg-emerald-500/5 px-3 py-1 rounded-full border border-emerald-500/10">Medical Intelligence Chat</span>
-                <h2 className="font-display font-bold text-2xl md:text-3xl text-white tracking-tight">AI Cannabis Medical Consultant</h2>
-                <p className="text-slate-400 text-xs">
+                <span className="text-xs font-semibold text-emerald-600 tracking-wider uppercase bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Medical Intelligence Chat</span>
+                <h2 className="font-display font-bold text-2xl md:text-3xl text-slate-900 tracking-tight">AI Cannabis Medical Consultant</h2>
+                <p className="text-slate-600 text-xs">
                   Ask deep pharmacological queries about cannabinoids, sleep cycles, systematic pain pathways, terpenes, dosage formulas, and chemical boiling points.
                 </p>
               </div>
@@ -928,23 +929,23 @@ export default function Home(props: any) {
                   <button
                     key={idx}
                     onClick={() => sendMessageToAi(suggest.q)}
-                    className="p-3 bg-slate-900/30 border border-slate-900 hover:border-emerald-500/20 text-left rounded-xl transition-all flex flex-col justify-between"
+                    className="p-3 bg-white border border-slate-200 hover:border-emerald-500/20 text-left rounded-xl transition-all flex flex-col justify-between shadow-sm cursor-pointer"
                   >
-                    <span className="text-[10px] text-emerald-400 font-semibold uppercase">{suggest.label}</span>
-                    <p className="text-slate-300 text-xs mt-1.5 leading-snug line-clamp-2">&ldquo;{suggest.q}&rdquo;</p>
+                    <span className="text-[10px] text-emerald-600 font-semibold uppercase">{suggest.label}</span>
+                    <p className="text-slate-700 text-xs mt-1.5 leading-snug line-clamp-2">&ldquo;{suggest.q}&rdquo;</p>
                   </button>
                 ))}
               </div>
 
               {/* CHAT WINDOW CONTAINER */}
-              <div className="bg-slate-900/40 border border-slate-900 rounded-2xl overflow-hidden flex flex-col min-h-[420px] max-h-[550px] shadow-xl" id="chat-window">
+              <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden flex flex-col min-h-[420px] max-h-[550px] shadow-sm" id="chat-window">
                 {/* CHAT HEADER */}
-                <div className="bg-slate-900 p-4 border-b border-slate-800 flex items-center justify-between">
+                <div className="bg-slate-100 p-4 border-b border-slate-200 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                     <div>
-                      <h3 className="text-sm font-semibold text-white">ReleafCanna AI Agent</h3>
-                      <p className="text-[10px] text-slate-500">Gemini 3.5 Flash Model • Live Consultation</p>
+                      <h3 className="text-sm font-semibold text-slate-900">ReleafCanna AI Agent</h3>
+                      <p className="text-[10px] text-slate-600">Gemini 3.5 Flash Model • Live Consultation</p>
                     </div>
                   </div>
                   <button
@@ -956,7 +957,7 @@ export default function Home(props: any) {
                         },
                       ])
                     }
-                    className="text-slate-400 hover:text-white text-xs flex items-center gap-1"
+                    className="text-slate-600 hover:text-slate-900 text-xs flex items-center gap-1 cursor-pointer font-medium transition-all"
                   >
                     <RotateCcw className="w-3.5 h-3.5" />
                     Reset Chat
@@ -974,7 +975,7 @@ export default function Home(props: any) {
                         className={`max-w-[85%] rounded-2xl p-4 text-xs md:text-sm leading-relaxed ${
                           msg.role === "user"
                             ? "bg-emerald-500 text-slate-950 rounded-tr-none font-medium"
-                            : "bg-slate-900/80 text-slate-100 rounded-tl-none border border-slate-800"
+                            : "bg-slate-100 text-slate-800 rounded-tl-none border border-slate-200 shadow-sm"
                         }`}
                       >
                         {/* Render simple markdown lines */}
@@ -987,7 +988,7 @@ export default function Home(props: any) {
 
                   {isAiLoading && (
                     <div className="flex justify-start">
-                      <div className="bg-slate-900/80 text-slate-400 rounded-2xl rounded-tl-none p-4 border border-slate-800 flex items-center gap-2">
+                      <div className="bg-slate-100 text-slate-600 rounded-2xl rounded-tl-none p-4 border border-slate-200 flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:-0.3s]" />
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:-0.15s]" />
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce" />
@@ -1004,7 +1005,7 @@ export default function Home(props: any) {
                     e.preventDefault();
                     sendMessageToAi();
                   }}
-                  className="bg-slate-900 p-3 border-t border-slate-800 flex items-center gap-2"
+                  className="bg-slate-100 p-3 border-t border-slate-200 flex items-center gap-2"
                   id="chat-input-form"
                 >
                   <input
@@ -1012,12 +1013,12 @@ export default function Home(props: any) {
                     value={inputMessage}
                     onChange={(e) => setInputMessage(e.target.value)}
                     placeholder="Type your cannabis or medical chemistry question here..."
-                    className="flex-grow bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                    className="flex-grow bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-450 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all font-sans"
                   />
                   <button
                     type="submit"
                     disabled={!inputMessage.trim() || isAiLoading}
-                    className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold p-2.5 rounded-xl transition-all disabled:opacity-40 disabled:pointer-events-none"
+                    className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold p-2.5 rounded-xl transition-all disabled:opacity-40 disabled:pointer-events-none cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
                   </button>
@@ -1039,9 +1040,9 @@ export default function Home(props: any) {
             >
               {/* INTRO HERO */}
               <div className="text-center max-w-2xl mx-auto space-y-2 py-2">
-                <span className="text-xs font-semibold text-emerald-400 tracking-wider uppercase bg-emerald-500/5 px-3 py-1 rounded-full border border-emerald-500/10">Biochemical Library</span>
-                <h2 className="font-display font-bold text-2xl md:text-3xl text-white tracking-tight">Major Cannabinoids Directory</h2>
-                <p className="text-slate-400 text-xs">
+                <span className="text-xs font-semibold text-emerald-600 tracking-wider uppercase bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Biochemical Library</span>
+                <h2 className="font-display font-bold text-2xl md:text-3xl text-slate-900 tracking-tight">Major Cannabinoids Directory</h2>
+                <p className="text-slate-600 text-xs">
                   Discover the active ingredients of the cannabis plant. Filter by name or medical benefits.
                 </p>
                 {/* SEARCH INPUT */}
@@ -1052,7 +1053,7 @@ export default function Home(props: any) {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search benefits, names, or strains..."
-                    className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-all"
+                    className="w-full bg-white border border-slate-300 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 transition-all shadow-sm"
                   />
                 </div>
               </div>
@@ -1071,18 +1072,18 @@ export default function Home(props: any) {
                           <div className={`text-2xl font-bold bg-gradient-to-r ${c.color} bg-clip-text text-transparent`}>
                             {c.name}
                           </div>
-                          <span className="text-xs text-slate-400 font-medium block mt-0.5">{c.fullName}</span>
+                          <span className="text-xs text-slate-600 font-medium block mt-0.5">{c.fullName}</span>
                         </div>
                         <span className={`text-[10px] font-semibold uppercase px-2 py-0.5 rounded border ${
                           c.psychoactive
-                            ? "bg-rose-950/10 text-rose-400 border-rose-500/10"
-                            : "bg-emerald-950/10 text-emerald-400 border-emerald-500/10"
+                            ? "bg-rose-50 text-rose-700 border-rose-200"
+                            : "bg-emerald-50 text-emerald-700 border-emerald-200"
                         }`}>
                           {c.psychoactive ? "Psychoactive" : "Non-Psychoactive"}
                         </span>
                       </div>
 
-                      <p className="text-slate-400 text-xs leading-relaxed">
+                      <p className="text-slate-600 text-xs leading-relaxed">
                         {(() => {
                           const isExpanded = !!expandedCannabinoids[c.id];
                           const needsTruncation = c.description.length > 100;
@@ -1094,7 +1095,7 @@ export default function Home(props: any) {
                               {needsTruncation && (
                                 <button
                                   onClick={() => toggleCannabinoidExpanded(c.id)}
-                                  className="text-emerald-400 hover:text-emerald-300 ml-1.5 font-semibold focus:outline-none cursor-pointer transition-colors inline"
+                                  className="text-emerald-600 hover:text-emerald-700 ml-1.5 font-semibold focus:outline-none cursor-pointer transition-colors inline"
                                 >
                                   {isExpanded ? "Read Less" : "Read More"}
                                 </button>
@@ -1106,8 +1107,8 @@ export default function Home(props: any) {
 
                       {/* KEY ADVANTAGES */}
                       <div>
-                        <h4 className="text-[11px] text-slate-500 font-semibold uppercase tracking-wider mb-2">Targeted Relief:</h4>
-                        <ul className="space-y-1.5 text-xs text-slate-300">
+                        <h4 className="text-[11px] text-slate-600 font-semibold uppercase tracking-wider mb-2">Targeted Relief:</h4>
+                        <ul className="space-y-1.5 text-xs text-slate-700">
                           {c.benefits.map((b, i) => (
                             <li key={i} className="flex items-center gap-2">
                               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/60" />
@@ -1119,27 +1120,27 @@ export default function Home(props: any) {
                     </div>
 
                     {/* RESTRUCTURED GRID FOOTER */}
-                    <div className="mt-6 pt-5 border-t border-slate-900/60 space-y-4">
+                    <div className="mt-6 pt-5 border-t border-slate-200 space-y-4">
                       {/* Grid for Boiling Point & Best Strains */}
                       <div className="grid grid-cols-2 gap-3">
                         {/* Decarboxylation Boiling Point Card */}
-                        <div className="bg-slate-950/40 border border-slate-900/80 p-2.5 rounded-xl flex flex-col justify-between space-y-1">
-                          <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1">
+                        <div className="bg-slate-100 border border-slate-200 p-2.5 rounded-xl flex flex-col justify-between space-y-1">
+                          <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider flex items-center gap-1">
                             <Flame className="w-3 h-3 text-amber-500" />
                             Boiling Pt
                           </span>
-                          <p className="text-xs font-bold text-slate-200 tracking-tight">{c.boilingPoint}</p>
+                          <p className="text-xs font-bold text-slate-800 tracking-tight">{c.boilingPoint}</p>
                         </div>
 
                         {/* Best Strains Card */}
-                        <div className="bg-slate-950/40 border border-slate-900/80 p-2.5 rounded-xl flex flex-col justify-between space-y-2">
-                          <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1">
-                            <Leaf className="w-3 h-3 text-emerald-400" />
+                        <div className="bg-slate-100 border border-slate-200 p-2.5 rounded-xl flex flex-col justify-between space-y-2">
+                          <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider flex items-center gap-1">
+                            <Leaf className="w-3 h-3 text-emerald-500" />
                             Top Cultivars
                           </span>
                           <div className="flex flex-wrap gap-1">
                             {c.bestStrains.map((strain, index) => (
-                              <span key={index} className="text-[9px] bg-slate-900/80 text-slate-300 px-1.5 py-0.5 rounded border border-slate-800/60 font-medium">
+                              <span key={index} className="text-[9px] bg-white text-slate-750 px-1.5 py-0.5 rounded border border-slate-300 font-medium shadow-sm">
                                 {strain}
                               </span>
                             ))}
@@ -1151,14 +1152,14 @@ export default function Home(props: any) {
                       <div className="flex items-center justify-between pt-1">
                         <Link
                           href={`/compounds/${c.id.toLowerCase()}`}
-                          className="text-xs text-slate-400 hover:text-white flex items-center gap-1 font-semibold transition-all hover:translate-x-0.5"
+                          className="text-xs text-slate-600 hover:text-slate-900 flex items-center gap-1 font-semibold transition-all hover:translate-x-0.5"
                         >
                           Science Profile
-                          <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
+                          <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
                         </Link>
                         <button
                           onClick={() => askAiAboutMatch(c.name)}
-                          className="text-xs text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-semibold transition-all cursor-pointer"
+                          className="text-xs text-emerald-600 hover:text-emerald-700 flex items-center gap-1 font-semibold transition-all cursor-pointer"
                         >
                           Ask AI
                           <ChevronRight className="w-3 h-3" />
@@ -1184,9 +1185,9 @@ export default function Home(props: any) {
             >
               {/* INTRO HERO */}
               <div className="text-center max-w-2xl mx-auto space-y-2 py-2">
-                <span className="text-xs font-semibold text-emerald-400 tracking-wider uppercase bg-emerald-500/5 px-3 py-1 rounded-full border border-emerald-500/10">Aromatic Science</span>
-                <h2 className="font-display font-bold text-2xl md:text-3xl text-white tracking-tight">The Terpene Library</h2>
-                <p className="text-slate-400 text-xs">
+                <span className="text-xs font-semibold text-emerald-600 tracking-wider uppercase bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Aromatic Science</span>
+                <h2 className="font-display font-bold text-2xl md:text-3xl text-slate-900 tracking-tight">The Terpene Library</h2>
+                <p className="text-slate-600 text-xs">
                   Discover the aromatic hydrocarbons that define cannabis scent and directly modulate the cannabinoid experience (The Entourage Effect).
                 </p>
                 {/* SEARCH INPUT */}
@@ -1197,7 +1198,7 @@ export default function Home(props: any) {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search aroma, effect, or terpene name..."
-                    className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-all"
+                    className="w-full bg-white border border-slate-300 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 transition-all shadow-sm"
                   />
                 </div>
               </div>
@@ -1214,27 +1215,27 @@ export default function Home(props: any) {
                       <div className="flex items-start justify-between">
                         <div>
                           <h3 className="text-2xl font-bold font-display">{t.name}</h3>
-                          <span className="text-[10px] text-slate-400 font-medium tracking-wide uppercase mt-0.5">{t.aroma}</span>
+                          <span className="text-[10px] text-slate-500 font-medium tracking-wide uppercase mt-0.5">{t.aroma}</span>
                         </div>
                         <Info className="w-4.5 h-4.5 opacity-60" />
                       </div>
 
-                      <p className="text-slate-300 text-xs leading-relaxed">
+                      <p className="text-slate-700 text-xs leading-relaxed">
                         {t.description}
                       </p>
 
                       {/* BP STAT */}
-                      <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
+                      <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
                         <Flame className="w-3.5 h-3.5 text-amber-500" />
                         <span>Vaporization boiling point: <strong>{t.boilingPoint}</strong></span>
                       </div>
 
                       {/* THERAPEUTIC ADVANTAGES */}
                       <div>
-                        <h4 className="text-[11px] text-slate-500 font-semibold uppercase tracking-wider mb-2">Therapeutic Benefits:</h4>
+                        <h4 className="text-[11px] text-slate-600 font-semibold uppercase tracking-wider mb-2">Therapeutic Benefits:</h4>
                         <div className="flex flex-wrap gap-1.5">
                           {t.effects.map((eff, idx) => (
-                            <span key={idx} className="text-[11px] bg-slate-950/40 text-slate-200 px-2.5 py-1 rounded border border-slate-900">
+                            <span key={idx} className="text-[11px] bg-white text-slate-850 px-2.5 py-1 rounded border border-slate-200 shadow-sm">
                               {eff}
                             </span>
                           ))}
@@ -1242,20 +1243,20 @@ export default function Home(props: any) {
                       </div>
                     </div>
 
-                    <div className="pt-6 mt-6 border-t border-slate-900/60 flex items-center justify-between">
-                      <div className="text-xs text-slate-400">
+                    <div className="pt-6 mt-6 border-t border-slate-200 flex items-center justify-between">
+                      <div className="text-xs text-slate-500">
                         Rich in: <strong>{t.bestStrains.join(", ")}</strong>
                       </div>
                       <div className="flex items-center gap-4">
                         <Link
                           href={`/compounds/${t.id.toLowerCase()}`}
-                          className="text-xs text-slate-400 hover:text-white flex items-center gap-1 font-medium transition-all"
+                          className="text-xs text-slate-600 hover:text-slate-900 flex items-center gap-1 font-medium transition-all"
                         >
                           Science Profile
                         </Link>
                         <button
                           onClick={() => askAiAboutMatch(t.name)}
-                          className="text-xs text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-medium transition-all cursor-pointer"
+                          className="text-xs text-emerald-600 hover:text-emerald-700 flex items-center gap-1 font-medium transition-all cursor-pointer"
                         >
                           Ask AI Advisor
                           <ChevronRight className="w-3 h-3" />
@@ -1281,9 +1282,9 @@ export default function Home(props: any) {
             >
               {/* INTRO HERO */}
               <div className="text-center max-w-2xl mx-auto space-y-2 py-2">
-                <span className="text-xs font-semibold text-emerald-400 tracking-wider uppercase bg-emerald-500/5 px-3 py-1 rounded-full border border-emerald-500/10">Symptom Mapping</span>
-                <h2 className="font-display font-bold text-2xl md:text-3xl text-white tracking-tight">Symptom-to-Chemistry Guide</h2>
-                <p className="text-slate-400 text-xs">
+                <span className="text-xs font-semibold text-emerald-600 tracking-wider uppercase bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Symptom Mapping</span>
+                <h2 className="font-display font-bold text-2xl md:text-3xl text-slate-900 tracking-tight">Symptom-to-Chemistry Guide</h2>
+                <p className="text-slate-600 text-xs">
                   Discover the pharmacological science behind how specific cannabinoids and terpenes target various medical conditions and physiological symptoms.
                 </p>
               </div>
@@ -1293,49 +1294,49 @@ export default function Home(props: any) {
                 {CONDITIONS.map((cond) => (
                   <div
                     key={cond.id}
-                    className="bg-slate-900/40 border border-slate-900 rounded-2xl p-6 hover:border-slate-800 transition-all space-y-4"
+                    className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-slate-300 transition-all space-y-4 shadow-sm"
                   >
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div>
-                        <h3 className="text-lg font-display font-bold text-white tracking-tight flex items-center gap-2">
-                          <HeartPulse className="w-5 h-5 text-emerald-400" />
+                        <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                          <HeartPulse className="w-5 h-5 text-emerald-600" />
                           {cond.name}
                         </h3>
-                        <p className="text-slate-400 text-xs mt-1">{cond.description}</p>
+                        <p className="text-slate-600 text-xs mt-1">{cond.description}</p>
                       </div>
 
                       <div className="flex flex-wrap gap-2">
                         {cond.cannabinoids.map((c) => (
-                          <span key={c} className="text-xs bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-lg border border-emerald-500/20 font-semibold">
+                          <span key={c} className="text-xs bg-emerald-50 text-emerald-700 px-3 py-1 rounded-lg border border-emerald-200 font-semibold">
                             {c}
                           </span>
                         ))}
                         {cond.terpenes.map((t) => (
-                          <span key={t} className="text-xs bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-lg border border-cyan-500/20 font-semibold">
+                          <span key={t} className="text-xs bg-cyan-50 text-cyan-700 px-3 py-1 rounded-lg border border-cyan-200 font-semibold">
                             {t}
                           </span>
                         ))}
                       </div>
                     </div>
 
-                    <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-900 flex items-start gap-3">
-                      <Brain className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <div className="bg-slate-100 p-4 rounded-xl border border-slate-200 flex items-start gap-3">
+                      <Brain className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="text-[11px] text-slate-500 font-semibold uppercase tracking-wider">The Entourage Entourage Science:</h4>
-                        <p className="text-slate-300 text-xs mt-1 leading-relaxed">
+                        <h4 className="text-[11px] text-slate-600 font-semibold uppercase tracking-wider">The Entourage Science:</h4>
+                        <p className="text-slate-700 text-xs mt-1 leading-relaxed">
                           {cond.scienceNote}
                         </p>
                       </div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
-                      <div className="text-xs text-slate-500">
+                      <div className="text-xs text-slate-600">
                         Want detailed science or custom recommendations?
                       </div>
                       <div className="flex items-center gap-3">
                         <Link
                           href={`/conditions/${cond.id.toLowerCase()}`}
-                          className="bg-slate-900/60 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white text-xs font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1"
+                          className="bg-white hover:bg-slate-50 border border-slate-200 text-slate-600 hover:text-slate-900 text-xs font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1 shadow-sm"
                         >
                           Symptom Details
                         </Link>
@@ -1345,7 +1346,7 @@ export default function Home(props: any) {
                             setSelectedEffect(cond.id);
                             setMatcherStep(2);
                           }}
-                          className="bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/20 text-emerald-400 hover:text-emerald-300 text-xs font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1 cursor-pointer"
+                          className="bg-white hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-200 text-emerald-600 hover:text-emerald-700 text-xs font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1 cursor-pointer shadow-sm"
                         >
                           Calculate Strains
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -1361,27 +1362,22 @@ export default function Home(props: any) {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-slate-900 bg-slate-950 py-10 px-4 text-center text-slate-500 text-xs" id="releafcanna-footer">
-        <div className="max-w-4xl mx-auto space-y-6">
+      <footer className="border-t border-slate-200 bg-slate-100 pt-12 text-slate-600 text-xs" id="releafcanna-footer">
+        <div className="max-w-7xl mx-auto px-4 pb-6">
           {/* MEDICAL DISCLAIMER PANEL */}
-          <div className="bg-amber-950/10 border border-amber-500/20 rounded-2xl p-5 text-left text-amber-400 space-y-2 max-w-3xl mx-auto" id="medical-warning-footer">
-            <div className="flex items-center gap-2 font-semibold text-sm">
-              <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0" />
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-left text-amber-850 space-y-2 max-w-4xl mx-auto shadow-sm" id="medical-warning-footer">
+            <div className="flex items-center gap-2 font-semibold text-sm text-amber-700">
+              <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
               <span>Medical & Educational Disclaimer</span>
             </div>
-            <p className="text-slate-400 text-xs leading-relaxed">
+            <p className="text-slate-700 text-xs leading-relaxed">
               <strong>Educational Resource:</strong> This application, its calculators, chemical directories, and AI Advisor are developed solely for chemical education and symptom-modulating guidance based on peer-reviewed botanical research. This tool does not provide legal advice, professional medical diagnoses, or treatment recommendations. Always consult with a certified medical health physician or licensed specialist before starting any therapeutic regimen.
             </p>
           </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-900/80 text-slate-600 max-w-3xl mx-auto">
-            <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-emerald-500/80" />
-              <span>Secure Server-Side AI Matching Enabled</span>
-            </div>
-            <p className="text-[11px]">© 2026 ReleafCanna. All rights reserved.</p>
-          </div>
         </div>
+
+        {/* COMPREHENSIVE CATEGORY-NESTED SITEMAP */}
+        <FooterSitemap />
       </footer>
     </div>
   );

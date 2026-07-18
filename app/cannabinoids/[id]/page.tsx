@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, BookOpen, Bookmark, Award, Check, Sparkles, Compass } from "lucide-react";
 import logoImage from "@/src/assets/images/releafcanna_cute_logo_1782007010792.jpg";
+import HashtagCrossLinker from "@/app/components/HashtagCrossLinker";
 
 // Cannabinoids data dictionary expanded with high-value academic SEO copy
 const CANNABINOID_DETAILS: Record<string, {
@@ -192,6 +193,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       `entourage effect ${data.name}`,
       `releafcanna ${id}`
     ],
+    alternates: {
+      canonical: `https://releafcanna.com/cannabinoids/${id.toLowerCase()}`,
+    },
     openGraph: {
       title: `${data.name} (${data.fullName}) Scientific Review | ReleafCanna`,
       description: `Explore the clinical pharmacology, receptor targets, and holistic applications of ${data.name}.`,
@@ -367,13 +371,16 @@ export default async function CannabinoidDetailPage({ params }: PageProps) {
 
         </article>
 
+        {/* BIOCHEMICAL INDEX & SEO HASHTAG NETWORK */}
+        <HashtagCrossLinker initialTag={id.toLowerCase()} isDarkTheme={false} />
+
         {/* Premium Acquisition Callout Banner */}
-        <section className="rounded-2xl p-6 sm:p-8 border border-emerald-500/20 bg-emerald-950 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/40 via-emerald-800/10 to-transparent pointer-events-none" />
+        <section className="rounded-2xl p-6 sm:p-8 border border-emerald-200 bg-emerald-50 text-slate-900 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-100/40 via-emerald-50/10 to-transparent pointer-events-none" />
           <div className="space-y-2 relative z-10 text-center md:text-left">
-            <span className="inline-block text-[9px] font-mono uppercase bg-emerald-800 text-emerald-200 border border-emerald-700 px-2 py-0.5 rounded font-bold">Domain Acquisition Offer</span>
-            <h3 className="text-lg sm:text-xl font-bold tracking-tight text-emerald-100">Establish Immediate Authority with releafcanna.com</h3>
-            <p className="text-xs text-emerald-300 leading-relaxed max-w-xl">
+            <span className="inline-block text-[9px] font-mono uppercase bg-emerald-100 text-emerald-800 border border-emerald-200 px-2 py-0.5 rounded font-bold">Domain Acquisition Offer</span>
+            <h3 className="text-lg sm:text-xl font-bold tracking-tight text-emerald-900">Establish Immediate Authority with releafcanna.com</h3>
+            <p className="text-xs text-slate-600 leading-relaxed max-w-xl">
               This digital platform, high-density scientific dataset, and custom-styled interactive components are fully packageable. Own an exact-match keyword asset to drive maximum botanical traffic.
             </p>
           </div>
@@ -381,7 +388,7 @@ export default async function CannabinoidDetailPage({ params }: PageProps) {
             href="https://www.godaddy.com/domainsearch/find?domainToCheck=releafcanna.com"
             target="_blank"
             rel="noopener noreferrer" 
-            className="px-5 py-3 rounded-xl font-bold text-xs bg-emerald-400 hover:bg-emerald-300 text-emerald-950 transition-all font-sans uppercase tracking-wider shrink-0 text-center shadow-lg w-full md:w-auto"
+            className="px-5 py-3 rounded-xl font-bold text-xs bg-emerald-500 hover:bg-emerald-600 text-white transition-all font-sans uppercase tracking-wider shrink-0 text-center shadow-sm w-full md:w-auto"
           >
             Inquire on GoDaddy
           </a>

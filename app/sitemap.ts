@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { getAllStrains } from '@/lib/strains';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseRoutes = [
@@ -10,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://releafcanna.com/matcher',
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: 'https://releafcanna.com/strains',
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
@@ -32,52 +39,82 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
-    {
-      url: 'https://releafcanna.com/seo-booster',
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    },
-    {
-      url: 'https://releafcanna.com/about',
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    },
-    {
-      url: 'https://releafcanna.com/contact',
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    },
   ];
 
-  // Programmatic SEO Tentacles - Cannabinoids
-  const cannabinoids = ['cbd', 'thc', 'cbg', 'cbn', 'thcv'];
-  const cannabinoidRoutes = cannabinoids.map((id) => ({
+  // Programmatic SEO Tentacles - High-Value Academic Cannabinoids (5 pages)
+  const academicCannabinoids = ['cbd', 'thc', 'cbg', 'cbn', 'thcv'];
+  const academicCannabinoidRoutes = academicCannabinoids.map((id) => ({
     url: `https://releafcanna.com/cannabinoids/${id}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.75,
+    priority: 0.85,
   }));
 
-  // Programmatic SEO Tentacles - Terpenes
-  const terpenes = ['beta-caryophyllene', 'myrcene', 'limonene', 'linalool', 'pinene', 'humulene'];
-  const terpeneRoutes = terpenes.map((id) => ({
+  // Programmatic SEO Tentacles - High-Value Academic Terpenes (6 pages)
+  const academicTerpenes = ['beta-caryophyllene', 'myrcene', 'limonene', 'linalool', 'pinene', 'humulene'];
+  const academicTerpeneRoutes = academicTerpenes.map((id) => ({
     url: `https://releafcanna.com/terpenes/${id}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.75,
+    priority: 0.85,
   }));
 
-  // Programmatic SEO Tentacles - Symptoms & Clinical Conditions (40 pages)
+  // Programmatic SEO Tentacles - Remaining Secondary Cannabinoids (10 pages)
+  const secondaryCannabinoids = ['cbc', 'cbda', 'thca', 'cbdv', 'delta-8-thc', 'cbga', 'thcva', 'cbca', 'delta-10-thc', 'cbl'];
+  const secondaryCannabinoidRoutes = secondaryCannabinoids.map((id) => ({
+    url: `https://releafcanna.com/compounds/${id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Programmatic SEO Tentacles - Remaining Secondary Terpenes (7 pages)
+  const secondaryTerpenes = ['terpinolene', 'ocimene', 'bisabolol', 'guaiol', 'geraniol', 'camphene', 'terpineol'];
+  const secondaryTerpeneRoutes = secondaryTerpenes.map((id) => ({
+    url: `https://releafcanna.com/compounds/${id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Programmatic SEO Tentacles - Clinical & Search-Optimized Conditions (52 pages total)
   const conditions = [
+    // 12 Clinical Parents
+    'pain', 'anxiety', 'insomnia', 'inflammation', 'focus', 'migraine', 'epilepsy', 'appetite', 'ptsd', 'muscle-spasms', 'fibromyalgia', 'glaucoma',
+    // 40 Search-Optimized Sub-Conditions
     'chronic-pain',
     'neuropathic-pain',
     'rheumatoid-arthritis',
     'generalized-anxiety',
     'panic-disorder',
-    'insomnia',
+    'sleep-onset-delay',
+    'circadian-disruption',
+    'restless-leg-syndrome',
+    'joint-stiffness',
+    'osteoporosis-bone-loss',
+    'allergic-dermatitis',
+    'psoriasis-plaques',
+    'sebum-acne-control',
+    'sinus-inflammation',
+    'autoimmune-inflammation',
+    'geriatric-stiff-joints',
+    'chronic-fatigue',
+    'mental-brain-fog',
+    'adhd-focus-deficit',
+    'bronchial-asthma',
+    'metabolic-syndrome',
+    'insulin-resistance',
+    'migraine-headaches',
+    'tension-headaches',
+    'neurodegenerative-decline',
+    'neurological-tremors',
+    'appetite-suppression',
+    'nausea-and-emesis',
+    'chronic-pain',
+    'neuropathic-pain',
+    'rheumatoid-arthritis',
+    'generalized-anxiety',
+    'panic-disorder',
     'sleep-onset-delay',
     'muscle-spasms',
     'fibromyalgia',
@@ -88,37 +125,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'chronic-gastritis',
     'acid-reflux',
     'ms-spasticity',
-    'chronic-fatigue',
-    'mental-brain-fog',
-    'adhd-focus-deficit',
     'athletic-soreness',
-    'joint-stiffness',
-    'neurodegenerative-decline',
-    'osteoporosis-bone-loss',
-    'appetite-suppression',
-    'nausea-and-emesis',
-    'restless-leg-syndrome',
-    'allergic-dermatitis',
-    'psoriasis-plaques',
-    'sebum-acne-control',
     'stress-hypertension',
-    'bronchial-asthma',
     'social-anxiety',
-    'circadian-disruption',
-    'metabolic-syndrome',
-    'insulin-resistance',
-    'neurological-tremors',
-    'menstrual-cramps',
-    'sinus-inflammation',
-    'autoimmune-inflammation',
-    'geriatric-stiff-joints'
+    'menstrual-cramps'
   ];
-  const conditionRoutes = conditions.map((id) => ({
+
+  // De-duplicate condition list
+  const uniqueConditions = Array.from(new Set(conditions));
+
+  const conditionRoutes = uniqueConditions.map((id) => ({
     url: `https://releafcanna.com/conditions/${id}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }));
 
-  return [...baseRoutes, ...cannabinoidRoutes, ...terpeneRoutes, ...conditionRoutes];
+  // Programmatic SEO Tentacles - High-Density Strains (1700+ pages!)
+  const strains = getAllStrains();
+  const strainRoutes = strains.map((s) => ({
+    url: `https://releafcanna.com/strains/${s.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.75,
+  }));
+
+  return [
+    ...baseRoutes,
+    ...academicCannabinoidRoutes,
+    ...academicTerpeneRoutes,
+    ...secondaryCannabinoidRoutes,
+    ...secondaryTerpeneRoutes,
+    ...conditionRoutes,
+    ...strainRoutes
+  ];
 }
